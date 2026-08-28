@@ -1,0 +1,151 @@
+.checkout-page {
+  flex: 1;
+  padding: 52px 0 80px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(246, 220, 117, 0.24), transparent 40%),
+    radial-gradient(circle at 88% 20%, rgba(212, 167, 44, 0.16), transparent 43%),
+    #f6f5f2;
+}
+
+.checkout-container {
+  max-width: 1100px;
+}
+
+.checkout-heading {
+  margin-bottom: 30px;
+}
+
+.checkout-eyebrow {
+  color: #777;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.checkout-heading h1,
+.checkout-success h1 {
+  color: #111;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1;
+}
+
+.checkout-heading > p:last-child,
+.checkout-success > p:not(.checkout-eyebrow) {
+  color: #777;
+  margin-top: 12px;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.8fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.checkout-form,
+.checkout-summary {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 18px;
+}
+
+.checkout-form label {
+  display: grid;
+  gap: 7px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  color: #222;
+  font-size: 15px;
+}
+
+.checkout-form input:focus {
+  outline: 2px solid #111;
+  outline-offset: 1px;
+}
+
+.checkout-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkout-error {
+  margin: 0;
+}
+
+.checkout-submit {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.checkout-summary {
+  position: sticky;
+  top: 96px;
+  background: #111;
+  color: #fff;
+}
+
+.checkout-summary h2 {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.checkout-summary-row,
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #383838;
+  font-size: 14px;
+}
+
+.checkout-summary-row span {
+  color: #ccc;
+}
+
+.checkout-total {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.checkout-success {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.checkout-success .btn {
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .checkout-page {
+    padding-top: 35px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+}
