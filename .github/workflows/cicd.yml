@@ -59,6 +59,6 @@ jobs:
       - name: Run Frontend Container
         run: |
           docker run -d \
-            -p 80:80 \
+            --network host \
             --name shopnest-frontend-container \
             ${{ secrets.DOCKER_USERNAME }}/shopnest-frontend:latest

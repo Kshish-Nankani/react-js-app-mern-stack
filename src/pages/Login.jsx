@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 import Alert from '../components/Alert'
+import { buildApiUrl } from '../api'
 import '../styles/auth.css'
 
 const Login=()=>{
@@ -13,7 +14,7 @@ const Login=()=>{
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try {
-             const res = await fetch('/api/auth/login',{
+             const res = await fetch(buildApiUrl('/api/auth/login'),{
                 method:'POST',
                 headers: {'content-Type' : 'application/json'},
                 body: JSON.stringify({email, password})

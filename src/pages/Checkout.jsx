@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../redux/cartSlice';
 import '../styles/checkout.css';
 import Alert from '../components/Alert';
+import { buildApiUrl } from '../api';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Checkout = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/orders', {
+      const response = await fetch(buildApiUrl('/api/orders'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

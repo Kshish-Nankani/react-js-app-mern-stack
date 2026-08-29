@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/profile.css';
 import Alert from '../components/Alert';
+import { buildApiUrl } from '../api';
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await fetch('/api/orders/my-orders', {
+        const response = await fetch(buildApiUrl('/api/orders/my-orders'), {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
           },

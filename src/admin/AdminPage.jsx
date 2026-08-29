@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/admin.css';
 import Alert from '../components/Alert';
+import { buildApiUrl } from '../api';
 
 const emptyProduct = { name: '', description: '', price: '', category: '', stock: '' };
 
@@ -25,7 +26,7 @@ const AdminPage = () => {
   const section = location.pathname.split('/')[2] || 'overview';
 
   const request = useCallback(async (path, options = {}) => {
-    const response = await fetch(`/api${path}`, {
+    const response = await fetch(buildApiUrl(`/api${path}`), {
       ...options,
       headers: {
         ...(options.body instanceof FormData ? {} : { 'Content-Type': 'application/json' }),

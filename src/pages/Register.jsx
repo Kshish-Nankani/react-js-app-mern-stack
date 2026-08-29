@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import '../styles/auth.css'
 import Alert from '../components/Alert'
+import { buildApiUrl } from '../api'
 
 const Register= ()=>{
     const [name, setName] = useState('')
@@ -13,7 +14,7 @@ const Register= ()=>{
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try {
-            const res = await fetch('/api/auth/register',{
+            const res = await fetch(buildApiUrl('/api/auth/register'),{
                 method:'POST',
                 headers: {'content-Type' : 'application/json'},
                 body: JSON.stringify({name, email, password})

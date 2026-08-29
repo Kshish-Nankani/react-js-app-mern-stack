@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import '../styles/shop.css';
 import Alert from '../components/Alert';
+import { buildApiUrl } from '../api';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch(buildApiUrl('/api/products'));
         const data = await response.json();
         if (!response.ok) throw new Error(data.message || 'Unable to load products');
         setProducts(Array.isArray(data) ? data : []);
