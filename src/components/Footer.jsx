@@ -239,10 +239,10 @@ const Footer = () => {
               </p>
 
               <div className="footer-social">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Instagram">ig</a>
-                <a href="#" aria-label="Twitter">X</a>
-                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a>
+                <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="Twitter">X</a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
               </div>
             </div>
 
