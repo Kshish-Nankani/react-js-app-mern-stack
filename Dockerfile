@@ -3,6 +3,11 @@ FROM node:18-alpine AS build
 
 WORKDIR /app
 
+ARG REACT_APP_LOCAL_BASE_URL=http://localhost:5000
+ARG REACT_APP_SERVER_BASE_URL=http://13.51.146.64:5000
+ENV REACT_APP_LOCAL_BASE_URL=${REACT_APP_LOCAL_BASE_URL}
+ENV REACT_APP_SERVER_BASE_URL=${REACT_APP_SERVER_BASE_URL}
+
 COPY package.json package-lock.json* ./
 RUN npm install
 
@@ -27,7 +32,7 @@ RUN printf '%s\n' \
   '        proxy_set_header X-Real-IP $remote_addr;' \
   '        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;' \
   '        proxy_set_header X-Forwarded-Proto $scheme;' \
-  '        proxy_pass http://127.0.0.1:5000;' \
+  '        proxy_pass http://13.51.146.64:5000;' \
   '    }' \
   '    location / {' \
   '        try_files $uri /index.html;' \
